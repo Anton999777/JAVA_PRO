@@ -3,7 +3,7 @@ package HomeWork;
 import java.util.Random;
 import java.util.Scanner;
 
-public class HomeWork3 {
+public class HomeWork5 {
 
     final static String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado" , "broccoli", "carrot",
             "cherry", "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", " pea", "peanut",
