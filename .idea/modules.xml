@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/HomeWork/HomeWork.iml" filepath="$PROJECT_DIR$/HomeWork/HomeWork.iml" />
       <module fileurl="file://$PROJECT_DIR$/JAVA_PRO_16.02.2023.iml" filepath="$PROJECT_DIR$/JAVA_PRO_16.02.2023.iml" />
     </modules>
   </component>
