@@ -1,26 +1,26 @@
 package HomeWork6;
 
 public class Employee {
-    private String username;
+    private String fullName;
     private String position;
     private String email;
-    private String numberPhone;
+    private String phoneNumber;
     private int age;
 
     public Employee(String username, String position, String email, String numberPhone, int age) {
-        this.username = username;
+        this.fullName = username;
         this.position = position;
         this.email = email;
-        this.numberPhone = numberPhone;
+        this.phoneNumber = numberPhone;
         this.age = age;
     }
 
     public String getUsername() {
-        return username;
+        return fullName;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.fullName = username;
     }
 
     public String getPosition() {
@@ -40,11 +40,11 @@ public class Employee {
     }
 
     public String getNumberPhone() {
-        return numberPhone;
+        return phoneNumber;
     }
 
     public void setNumberPhone(String numberPhone) {
-        this.numberPhone = numberPhone;
+        this.phoneNumber = numberPhone;
     }
 
     public int getAge() {
