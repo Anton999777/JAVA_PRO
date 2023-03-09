@@ -11,14 +11,14 @@ public class HomeWork5 {
     public static void main(String[] args) {
 
 
-        System.out.println(findSymbolOccurance("anton shevchenko", 'n'));
-        System.out.println(stringReverse("Anton"));
-        System.out.println(findWordPosition("Apollo", "llo"));
-        System.out.println(isPalindrome("ere"));
-        arrayWords();
+//        System.out.println(findSymbolOccurance("anton", 'n'));
+//        System.out.println(stringReverse(null));
+//        System.out.println(findWordPosition("hello", "ar"));
+        System.out.println(isPalindrome(null));
+//        guessTheWordGame();
 
     }
-    public static void arrayWords () {
+    public static void guessTheWordGame () {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
@@ -53,29 +53,43 @@ public class HomeWork5 {
 
 
 
-    public static String stringReverse (String reverse) {
-        return new  StringBuilder(reverse).reverse().toString();
+    public static String stringReverse (String source) {
+        if (source == null) {
+            return "Ошибка!";
+        } else {
+            return new StringBuilder(source).reverse().toString();
+        }
     }
-
     public static int findSymbolOccurance (String name, char symbol) {
 
-        char[] arrayChars = name.toCharArray();
-        int counter = 0;
+        if (name == null) {
+            return 0;
+        } else {
+            char[] symbols = name.toCharArray();
+            int counter = 0;
 
-        for (int i = 0; i < arrayChars.length; i++) {
-            if (symbol == arrayChars[i]) {
-                counter++;
+            for (int i = 0; i < symbols.length; i++) {
+                if (symbol == symbols[i]) {
+                    counter++;
+                }
             }
+            return counter;
         }
-        return counter;
     }
 
     public static int findWordPosition (String source, String target) {
-        return source.indexOf(target);
+        if (source == null && target == null) {
+            return -1;
+        } else {
+            return source.indexOf(target);
+        }
     }
-
     public static boolean isPalindrome (String palindrome) {
-        String str = new StringBuilder(palindrome).reverse().toString();
-        return str.equals(palindrome);
+        if (palindrome == null) {
+            return false;
+        } else {
+            String str = new StringBuilder(palindrome).reverse().toString();
+            return str.equals(palindrome);
+        }
     }
 }
