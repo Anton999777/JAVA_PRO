@@ -7,20 +7,20 @@ public class Employee {
     private String phoneNumber;
     private int age;
 
-    public Employee(String username, String position, String email, String numberPhone, int age) {
-        this.fullName = username;
+    public Employee(String fullName, String position, String email, String phoneNumber, int age) {
+        this.fullName = fullName;
         this.position = position;
         this.email = email;
-        this.phoneNumber = numberPhone;
+        this.phoneNumber = phoneNumber;
         this.age = age;
     }
 
-    public String getUsername() {
+    public String getFullName() {
         return fullName;
     }
 
-    public void setUsername(String username) {
-        this.fullName = username;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getPosition() {
@@ -39,12 +39,12 @@ public class Employee {
         this.email = email;
     }
 
-    public String getNumberPhone() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setNumberPhone(String numberPhone) {
-        this.phoneNumber = numberPhone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public int getAge() {
