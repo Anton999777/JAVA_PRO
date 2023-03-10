@@ -1,5 +1,6 @@
 package HomeWork5;
 
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,13 +11,11 @@ public class HomeWork5 {
 
     public static void main(String[] args) {
 
-
-//        System.out.println(findSymbolOccurance("anton", 'n'));
-//        System.out.println(stringReverse(null));
-//        System.out.println(findWordPosition("hello", "ar"));
+        System.out.println(findSymbolOccurance(null, 'n'));
+        System.out.println(stringReverse("hello"));
+        System.out.println(findWordPosition("hello", "el"));
         System.out.println(isPalindrome(null));
-//        guessTheWordGame();
-
+        guessTheWordGame();
     }
     public static void guessTheWordGame () {
         Random random = new Random();
@@ -55,41 +54,47 @@ public class HomeWork5 {
 
     public static String stringReverse (String source) {
         if (source == null) {
-            return "Ошибка!";
+                throw new NullPointerException ("Error: you didn't enter any data." + "\n" +
+                        "null was passed to the argument 'source'.");
         } else {
             return new StringBuilder(source).reverse().toString();
         }
     }
     public static int findSymbolOccurance (String name, char symbol) {
 
+        int counter = 0;
         if (name == null) {
-            return 0;
+            Objects.requireNonNull(name, "Error: you didn't enter any data." + "\n" +
+                    "Null was passed to the argument 'name'.");
         } else {
             char[] symbols = name.toCharArray();
-            int counter = 0;
 
             for (int i = 0; i < symbols.length; i++) {
                 if (symbol == symbols[i]) {
                     counter++;
                 }
             }
-            return counter;
         }
+        return counter;
     }
 
     public static int findWordPosition (String source, String target) {
-        if (source == null && target == null) {
-            return -1;
+        if (source == null || target == null) {
+            throw new NullPointerException("Error: you didn't enter any data." + "\n" +
+                    "Null was passed to the argument. class HomeWork5/ line_84");
         } else {
             return source.indexOf(target);
         }
     }
     public static boolean isPalindrome (String palindrome) {
         if (palindrome == null) {
-            return false;
-        } else {
+            System.out.println("Error: you didn't enter any data." +
+                    "\n" +
+                    "null was passed to the argument 'palindrome'.");
+            System.exit(1);
+        }
             String str = new StringBuilder(palindrome).reverse().toString();
             return str.equals(palindrome);
         }
     }
-}
+
