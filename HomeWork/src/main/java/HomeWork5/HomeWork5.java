@@ -11,7 +11,7 @@ public class HomeWork5 {
 
     public static void main(String[] args) {
 
-        System.out.println(findSymbolOccurance(null, 'n'));
+        System.out.println(findSymbolOccurance("anton", 'n'));
         System.out.println(stringReverse("hello"));
         System.out.println(findWordPosition("hello", "el"));
         System.out.println(isPalindrome(null));
@@ -50,23 +50,19 @@ public class HomeWork5 {
         }
     }
 
-
-
     public static String stringReverse (String source) {
         if (source == null) {
-                throw new NullPointerException ("Error: you didn't enter any data." + "\n" +
-                        "null was passed to the argument 'source'.");
-        } else {
-            return new StringBuilder(source).reverse().toString();
+            throw new NullPointerException("Error: you didn't enter any data." + "\n" +
+                    "null was passed to the argument 'source'.");
         }
+        return new StringBuilder(source).reverse().toString();
     }
-    public static int findSymbolOccurance (String name, char symbol) {
 
+    public static int findSymbolOccurance (String name, char symbol) {
         int counter = 0;
-        if (name == null) {
             Objects.requireNonNull(name, "Error: you didn't enter any data." + "\n" +
                     "Null was passed to the argument 'name'.");
-        } else {
+
             char[] symbols = name.toCharArray();
 
             for (int i = 0; i < symbols.length; i++) {
@@ -74,7 +70,6 @@ public class HomeWork5 {
                     counter++;
                 }
             }
-        }
         return counter;
     }
 
@@ -82,9 +77,8 @@ public class HomeWork5 {
         if (source == null || target == null) {
             throw new NullPointerException("Error: you didn't enter any data." + "\n" +
                     "Null was passed to the argument. class HomeWork5/ line_84");
-        } else {
-            return source.indexOf(target);
         }
+            return source.indexOf(target);
     }
     public static boolean isPalindrome (String palindrome) {
         if (palindrome == null) {
