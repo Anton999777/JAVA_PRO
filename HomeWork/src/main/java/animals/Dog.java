@@ -1,19 +1,19 @@
 package animals;
 
-public class Dog extends Animals{
-    private static int counterDogs;
+public class Dog extends Animal {
+    private static int dogsCounter;
 
     public Dog(String name, int runRestriction, int swimRestriction) {
         super(name, runRestriction, swimRestriction);
-        counterDogs++;
+        dogsCounter++;
     }
 
-    public static int getCounterDogs() {
-        return counterDogs;
+    public static int getDogsCounter() {
+        return dogsCounter;
     }
 
     @Override
-    public void run (int lengthBarrier) {
+    public void run(int lengthBarrier) {
         super.run(lengthBarrier);
 
         if (lengthBarrier < 0) {
@@ -29,7 +29,7 @@ public class Dog extends Animals{
     public void swimming(int lengthBarrier) {
         super.swimming(lengthBarrier);
 
-        if (0 > lengthBarrier) {
+        if (lengthBarrier < 0) {
             System.out.println("Please enter a positive number for the length of the barrier");
         } else if (getSwimRestriction() == 0) {
             System.out.println(getName() + " не вміє плавати :(");

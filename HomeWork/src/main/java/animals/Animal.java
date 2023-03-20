@@ -1,22 +1,22 @@
 package animals;
 
-public class Animals {
+public class Animal {
+
+    private static int animalsCounter;
     private String name;
     private int runRestriction;
     private int swimRestriction;
 
-    private static int counterAnimals;
 
-
-    public Animals(String name, int runRestriction, int swimRestriction) {
+    public Animal(String name, int runRestriction, int swimRestriction) {
         this.name = name;
         this.runRestriction = runRestriction;
         this.swimRestriction = swimRestriction;
-        counterAnimals++;
+        animalsCounter++;
     }
 
-    public static int getCounterAnimals() {
-        return counterAnimals;
+    public static int getAnimalsCounter() {
+        return animalsCounter;
     }
 
     public int getRunRestriction() {
@@ -35,11 +35,11 @@ public class Animals {
         this.name = name;
     }
 
-    public void run (int lengthBarrier) {
+    public void run(int lengthBarrier) {
         System.out.println("Animal running");
     }
 
-    public void swimming (int lengthBarrier) {
+    public void swimming(int lengthBarrier) {
         System.out.println("Animal swimming");
     }
 }
