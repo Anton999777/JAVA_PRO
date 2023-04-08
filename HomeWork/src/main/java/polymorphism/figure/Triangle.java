@@ -1,11 +1,11 @@
 package polymorphism.figure;
 
-public class Triangle extends Figure implements GeometricShape {
+public class Triangle implements GeometricShape {
 
     private double sideA;
     private double sideB;
     private double sideC;
-    private double S_Triangle;
+    private double areaTriangle;
 
     public Triangle(double sideA, double sideB, double sideC) {
         this.sideA = sideA;
@@ -37,18 +37,17 @@ public class Triangle extends Figure implements GeometricShape {
         this.sideC = sideC;
     }
 
-    public double getS_Triangle() {
-        return S_Triangle;
+    public double getAreaTriangle() {
+        return areaTriangle;
     }
 
-    public void setS_Triangle(double s_Triangle) {
-        S_Triangle = s_Triangle;
+    public void setAreaTriangle(double areaTriangle) {
+        this.areaTriangle = areaTriangle;
     }
 
     @Override
-    public double areaFigure() {
-        S_Triangle = sideA + sideB + sideC;
-        return S_Triangle;
+    public double getArea() {
+        return sideA + sideB + sideC;
     }
 
 }
