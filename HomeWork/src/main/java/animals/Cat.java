@@ -14,9 +14,12 @@ public class Cat extends Animal {
     }
 
     @Override
-    public void run(int lengthBarrier) {
-        super.run(lengthBarrier);
+    public void swimming(int lengthBarrier) {
+        System.out.println("Коти не плавають!");
+    }
 
+    @Override
+    public void run(int lengthBarrier) {
         if (lengthBarrier < 0) {
             System.out.println("Please enter a positive number for the length of the barrier");
         } else if (lengthBarrier > getRunRestriction()) {

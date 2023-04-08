@@ -14,8 +14,6 @@ public class Dog extends Animal {
 
     @Override
     public void run(int lengthBarrier) {
-        super.run(lengthBarrier);
-
         if (lengthBarrier < 0) {
             System.out.println("Please enter a positive number for the length of the barrier");
         } else if (lengthBarrier > getRunRestriction()) {
@@ -27,8 +25,6 @@ public class Dog extends Animal {
 
     @Override
     public void swimming(int lengthBarrier) {
-        super.swimming(lengthBarrier);
-
         if (lengthBarrier < 0) {
             System.out.println("Please enter a positive number for the length of the barrier");
         } else if (getSwimRestriction() == 0) {
