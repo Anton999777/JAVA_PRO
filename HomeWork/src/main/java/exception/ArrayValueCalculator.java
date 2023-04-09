@@ -1,35 +1,30 @@
 package exception;
 
-import string.StringLevelOne;
-
-import java.util.Arrays;
-import java.util.zip.DataFormatException;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class ArrayValueCalculator {
+    String[][] matrix = new String[4][4];
+    private static final int MAX_MATRIX_SIZE = 4;
 
-    int results = 0;
-    String[][] str = new String[4][4];
-
-    public void arrayInitialization(String[][] strings1) {
-        for (int i = 0; i < strings1.length; i++) {
-            for (int j = 0; j < strings1[i].length; j++) {
-                strings1[i][j] = "5";
+    public void arrayInitialization(String[][] values) {
+        for (int i = 0; i < values.length; i++) {
+            for (int j = 0; j < values[i].length; j++) {
+                values[i][j] = String.valueOf(ThreadLocalRandom.current().nextInt(5));
             }
         }
     }
 
-    public int doCalc(String[][] strings1) {
-        if (strings1.length != str.length || strings1[0].length != str[0].length) {
+    public int doCalc(String[][] values) {
+        int results = 0;
+        if (values.length != MAX_MATRIX_SIZE || checkMatrixSize(values)) {
             throw new ArraySizeException("В параметр внесено розмір масиву не відповідний розміру 4х4.");
         }
-
-        for (int i = 0; i < strings1.length; i++) {
-            for (int j = 0; j < strings1[i].length; j++) {
-                checkExceptionNull(strings1[i][j], i, j);
-
-                if (checkNumbValue(strings1[i][j])) {
-                    results = results + Integer.parseInt(strings1[i][j]);
-                } else {
+        for (int i = 0; i < values.length; i++) {
+            for (int j = 0; j < values[i].length; j++) {
+                checkExceptionNull(values[i][j], i, j);
+                try {
+                    results = results + Integer.parseInt(values[i][j]);
+                } catch (NumberFormatException e) {
                     throw new ArrayDataException("в індексі " + "[" + i + "]" + "[" + j + "]" + "" +
                             " - строкового масиву знаходиться невірні данні");
                 }
@@ -38,18 +33,18 @@ public class ArrayValueCalculator {
         return results;
     }
 
-    public boolean checkNumbValue(String cell) {
-        try {
-            Integer.parseInt(cell);
-        } catch (Exception e) {
-            return false;
-        }
-        return true;
-    }
-
     public void checkExceptionNull(String value, int i, int j) {
         if (value == null) {
             throw new NullPointerException("в індексі строкового масива: " + "[" + i + "]" + "[" + j + "]" + " - лежить null");
         }
+    }
+
+    public boolean checkMatrixSize(String[][] values) {
+        for (int i = 0; i < values.length; i++) {
+            if (values[i].length != MAX_MATRIX_SIZE) {
+                return true;
+            }
+        }
+        return false;
     }
 }
