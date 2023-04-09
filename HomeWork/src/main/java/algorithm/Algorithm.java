@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Algorithm {
     public static void main(String[] args) {
         insertionSort(arrayFilling(20));
-        bubbleSort(arrayFilling(20));
+        bubbleSort(arrayFilling(200));
 
     }
 
@@ -15,12 +15,11 @@ public class Algorithm {
         for (int i = 0; i < arrayFilling.length; i++) {
             arrayFilling[i] = ThreadLocalRandom.current().nextInt(size);
         }
-        System.out.println(Arrays.toString(arrayFilling));
         return arrayFilling;
     }
 
     public static int[] insertionSort(int[] arrayFilling) {
-        int next = 0;
+        int next;
         for (int i = 0; i < arrayFilling.length - 1; i++) {
             if (arrayFilling[i] > arrayFilling[i + 1]) {
                 next = arrayFilling[i + 1];
