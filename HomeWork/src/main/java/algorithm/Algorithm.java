@@ -18,36 +18,36 @@ public class Algorithm {
         return arrayFilling;
     }
 
-    public static int[] insertionSort(int[] arrayFilling) {
+    public static int[] insertionSort(int[] elements) {
         int next;
-        for (int i = 0; i < arrayFilling.length - 1; i++) {
-            if (arrayFilling[i] > arrayFilling[i + 1]) {
-                next = arrayFilling[i + 1];
-                arrayFilling[i + 1] = arrayFilling[i];
-                arrayFilling[i] = next;
+        for (int i = 0; i < elements.length - 1; i++) {
+            if (elements[i] > elements[i + 1]) {
+                next = elements[i + 1];
+                elements[i + 1] = elements[i];
+                elements[i] = next;
                 for (int j = i; j > 0; j--) {
-                    if (next < arrayFilling[j - 1]) {
-                        arrayFilling[j] = arrayFilling[j - 1];
-                        arrayFilling[j - 1] = next;
+                    if (next < elements[j - 1]) {
+                        elements[j] = elements[j - 1];
+                        elements[j - 1] = next;
                     } else {
                         break;
                     }
                 }
             }
         }
-        return arrayFilling;
+        return elements;
     }
 
-    public static int[] bubbleSort(int[] arrayFilling) {
-        for (int i = 0; i < arrayFilling.length; i++) {
-            for (int j = 0; j < arrayFilling.length - 1 - i; j++) {
-                if (arrayFilling[j] > arrayFilling[j + 1]) {
-                    int next = arrayFilling[j + 1];
-                    arrayFilling[j + 1] = arrayFilling[j];
-                    arrayFilling[j] = next;
+    public static int[] bubbleSort(int[] elements) {
+        for (int i = 0; i < elements.length; i++) {
+            for (int j = 0; j < elements.length - 1 - i; j++) {
+                if (elements[j] > elements[j + 1]) {
+                    int next = elements[j + 1];
+                    elements[j + 1] = elements[j];
+                    elements[j] = next;
                 }
             }
         }
-        return arrayFilling;
+        return elements;
     }
 }
