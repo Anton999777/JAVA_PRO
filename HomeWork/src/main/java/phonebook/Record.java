@@ -4,7 +4,6 @@ public class Record {
 
     private String name;
     private String phoneNumber;
-    private String secondPhoneNumber;
 
     public Record(String name, String numberPhone) {
         this.name = name;
@@ -20,7 +19,4 @@ public class Record {
         return phoneNumber;
     }
 
-    public String getSecondPhoneNumber() {
-        return secondPhoneNumber;
-    }
 }
